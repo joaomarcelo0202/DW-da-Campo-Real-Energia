@@ -43,11 +43,23 @@ docs/
 - **MariaDB ODBC 3.2 Driver (64 bits)**: é por ele que o Power BI lê o banco.
   Download em https://mariadb.com/downloads/connectors/ (ODBC connector, Windows)
 
-Usamos o MariaDB do XAMPP. Por isso o script da professora (feito para MySQL 8)
-precisou de dois ajustes, explicados no começo do `sql/01_origem_criar.sql`:
-a collation `utf8mb4_0900_ai_ci` virou `utf8mb4_general_ci` e a linha
-`SET SESSION cte_max_recursion_depth` foi comentada. Os dados gerados são os
-mesmos (78.798 medições, como o script original espera).
+### Banco escolhido
+
+O enunciado permite MySQL ou PostgreSQL. Escolhemos o **MySQL**, usando o
+servidor que já vem no XAMPP. Esse servidor é o MariaDB, que é compatível com
+o MySQL e usa os mesmos comandos.
+
+O script da professora foi feito para o MySQL 8 e tem duas linhas que o
+MariaDB não aceita. Só essas duas foram ajustadas (o ajuste está comentado no
+começo do `sql/01_origem_criar.sql`):
+
+| No script original | Como ficou | Por quê |
+|--------------------|------------|---------|
+| `COLLATE utf8mb4_0900_ai_ci` | `COLLATE utf8mb4_general_ci` | essa collation só existe no MySQL 8 |
+| `SET SESSION cte_max_recursion_depth = 10000;` | linha comentada | essa configuração só existe no MySQL 8 |
+
+Nenhum dado mudou: o banco de origem fica com as mesmas 78.798 medições que o
+script original gera.
 
 ## Configuração
 
