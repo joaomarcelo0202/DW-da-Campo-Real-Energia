@@ -1,10 +1,11 @@
 # Data Warehouse da Campo Real Energia
 
-Trabalho prático de Data Warehouse. A partir do banco operacional da Campo Real
-Energia (geradora fictícia com 9 usinas), o projeto extrai o preço da energia
-(PLD) e o clima, mede a qualidade dos dados, limpa e carrega um star schema
-para responder: **quanto a nossa geração vale, onde e quando ganhamos ou
-perdemos dinheiro, e se dá para confiar nos números**.
+Integrantes:
+João Marcelo dos Santos Oliveira
+Camila Vujanski de Lara
+Leticia Borges Cardoso
+Rhauan Ferraz da Silva
+
 
 ## O que tem aqui
 
